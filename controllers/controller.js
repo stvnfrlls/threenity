@@ -1,1 +1,6 @@
-const model = require('../models/model');
+const Model = require("../models/model");
+const model = new Model();
+
+exports.renderIndexPage = (res) => {
+  res.render("index");
+};
