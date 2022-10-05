@@ -1,0 +1,14 @@
+<h1>Reset Password</h1>
+
+<a href="/">HOME</a>
+
+<form action="./ResetPassword" method="post">
+    <h2>Account Exist</h2><br>
+
+    <label for="email">Email Address: </label>
+    <input type="hidden" name="userID" id="userID" value="<%= userID %> ">
+    <input type="text" value="<%= dbemail  %>" disabled> <br>
+    <label for="password">New Password</label>
+    <input type="password" name="password" id="password"><br>
+    <button type="submit">Change Password</button><br>
+</form>
