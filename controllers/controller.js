@@ -19,9 +19,9 @@ exports.login = async (req, res) => {
   if (data.length > 0) {
     if (data[0].password == password) {
       if (data[0].role == "admin") {
-        res.redirect("/admin");
+        res.redirect("/admin/tools");
       } else {
-        res.redirect("/dashboard");
+        res.redirect("/student/dashboard");
       }
     }
   } else {
@@ -102,7 +102,22 @@ exports.renderAnnouncements = (req, res) => {
 };
 
 //administrator dashboard
-
 exports.renderAdminDashboard = (req, res) => {
-  res.render("admin/dashboard");
+  res.render("administrator/dashboard");
+};
+
+exports.renderAddStudent = (req, res) => {
+  res.render("administrator/addStudent");
+};
+
+exports.renderAttendance = (req, res) => {
+  res.render("administrator/attendance");
+};
+
+exports.renderEncodeGrades = (req, res) => {
+  res.render("administrator/encodeGrades");
+};
+
+exports.renderEditProfile = (req, res) => {
+  res.render("administrator/editProfile");
 };
