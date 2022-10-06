@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/tools", controller.renderAdminDashboard);
 
-router.get("/addStudents", controller.renderAddStudent);
+router.get("/addStudent", controller.renderAddStudent);
 
 router.get("/attendance", controller.renderAttendance);
 

@@ -20,9 +20,11 @@ exports.login = async (req, res) => {
     if (data[0].password == password) {
       if (data[0].role == "admin") {
         res.redirect("/admin/tools");
-      } else {
+      } else if (data[0].role == "tch") {
+        res.redirect("/teacher/dashboard");
+      } else if (data[0].role == "usr") {
         res.redirect("/student/dashboard");
-      }
+      } 
     }
   } else {
     console.log("Email does not exist.");
@@ -120,4 +122,27 @@ exports.renderEncodeGrades = (req, res) => {
 
 exports.renderEditProfile = (req, res) => {
   res.render("administrator/editProfile");
+};
+
+
+//Teachers Dashboard
+
+exports.renderTeacherDashboard = (req, res) => {
+  res.render("teacher/dashboard");
+};
+
+exports.renderCreateAnnouncement = (req, res) => {
+  res.render("teacher/createAnnouncement");
+};
+
+exports.renderCreateReminders = (req, res) => {
+  res.render("teacher/createReminders");
+};
+
+exports.renderEncodeGrades = (req, res) => {
+  res.render("teacher/encodeGrades");
+};
+
+exports.renderScanQR = (req, res) => {
+  res.render("teacher/scanQR");
 };
