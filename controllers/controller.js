@@ -1,12 +1,12 @@
 const Model = require("../models/model");
 const model = new Model();
 
-exports.renderIndexPage = (res) => {
+exports.renderIndexPage = (req, res) => {
   res.render("index");
 };
 
 //account page
-exports.renderLoginPage = (res) => {
+exports.renderLoginPage = (req, res) => {
   res.render("accounts/login");
 };
 
@@ -29,7 +29,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.renderRegisterPage = (res) => {
+exports.renderRegisterPage = (req, res) => {
   res.render("accounts/register");
 };
 
@@ -53,7 +53,7 @@ exports.register = async (req, res) => {
   }
 };
 
-exports.renderforgetPassword = (res) => {
+exports.renderforgetPassword = (req, res) => {
   res.render("accounts/verify");
 };
 
@@ -85,24 +85,24 @@ exports.resetPassword = async (req, res) => {
 };
 
 //student dashboard
-exports.renderDashboard = (res) => {
+exports.renderDashboard = (req, res) => {
   res.render("students/dashboard");
 };
 
-exports.renderGrades = (res) => {
+exports.renderGrades = (req, res) => {
   res.render("students/grades");
 };
 
-exports.renderReminders = (res) => {
+exports.renderReminders = (req, res) => {
   res.render("students/reminders");
 };
 
-exports.renderAnnouncements = (res) => {
+exports.renderAnnouncements = (req, res) => {
   res.render("students/announcements");
 };
 
 //administrator dashboard
 
-exports.renderAdminDashboard = (res) => {
+exports.renderAdminDashboard = (req, res) => {
   res.render("admin/dashboard");
 };
