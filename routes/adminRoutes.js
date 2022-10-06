@@ -4,12 +4,14 @@ const router = express.Router();
 
 //administrator
 
-router.get("/administrator", controller.renderAdminDashboard);
+router.get("/tools", controller.renderAdminDashboard);
 
-router.get("/encode_grades");
+router.get("/addStudents", controller.renderAddStudent);
 
-router.get("/set_reminders");
+router.get("/attendance", controller.renderAttendance);
 
-router.get("/create_announcement");
+router.get("/encodeGrades", controller.renderEncodeGrades);
+
+router.get("/editProfile", controller.renderEditProfile);
 
 module.exports = router;
