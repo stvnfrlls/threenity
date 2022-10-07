@@ -1,3 +1,20 @@
+<script src="../../static/js/scanner.js"></script>
+
 <h1>DASHBOARD (Teacher Side) > Scan QR Code</h1>
 
 <a href="teacher/dashboard">HOME</a>
+
+<video id="reader"></video>
+
+<script>
+    var scanner = new Instascan.Scanner({ video: document.getElementById('reader') });
+    scanner.addListener('scan', function (content, image) {
+        console.log(content);
+    });
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+        }
+    });
+</script>
